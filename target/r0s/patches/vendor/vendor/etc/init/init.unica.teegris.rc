@@ -1,0 +1,2 @@
+on early-init && property:ro.boot.bootloader=S901BXXSIFYI3
+    mount none /vendor/tee_S901BXXSIFYI3 /vendor/tee bind
