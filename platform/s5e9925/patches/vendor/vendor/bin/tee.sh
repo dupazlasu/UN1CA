@@ -10,5 +10,5 @@
 # to mount the correct TEEgris folder.
 
 if strings /dev/block/by-name/radio | grep -q FYI3; then
-    setprop dev.teegris.model old
+    setprop vendor.teegris.new old
 fi

@@ -1,5 +1,11 @@
-on early-init
-    exec - root root -- /vendor/bin/tee.sh
+service tee_script /vendor/bin/tee.sh
+    user root
+    group radio
+    oneshot
+    disabled
 
-on fs && property:dev.teegris.model=old
+on early-init
+    start tee_script
+
+on fs && property:vendor.teegris.old=true
     mount none /vendor/etc/tee_old /vendor/tee bind
